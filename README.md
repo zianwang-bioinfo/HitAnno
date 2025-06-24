@@ -13,7 +13,9 @@ Table of Contents:
 ## Overview
 We developed HitAnno, a scalable model built on a hierarchical transformer architecture for accurate cell type annotation on large scATAC-seq datasets. HitAnno constructs “cell sentences” by leveraging accessibility profiles on cell-type-specific peaks, capturing the epigenomic cell heterogeneity. The model adopts a two-level attention mechanism to capture both peak-level and peak-set-level dependencies, enabling hierarchical feature integration for reliable annotation performance.
 
-![HitAnno model architecture](figures/model.png)
+<div align="center">
+  <img src="figures/model.png" alt="HitAnno model" width="70%">
+</div>
 
 ## Installation
 *under construction*
