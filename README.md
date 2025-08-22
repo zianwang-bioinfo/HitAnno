@@ -49,10 +49,28 @@ python -m ipykernel install --user --name=hitanno
 ```
 
 ## Usage
-*under construction*
+After setting up the environment and downloading the code, you can run the program with Python to perform prediction. We provide a `run_hitanno_test.py` file, where you can use `-h` to view all parameters and their detailed descriptions.
+```
+usage: run_hitanno_test.py [-h] [--train_data TRAIN_DATA] [--test_data TEST_DATA] [--peak_num_ct PEAK_NUM_CT] [--output_path OUTPUT_PATH]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --train_data TRAIN_DATA
+                        Path to training dataset (h5ad file)
+  --test_data TEST_DATA
+                        Path to test dataset (h5ad file)
+  --peak_num_ct PEAK_NUM_CT
+                        Peak number per cell type (the default parameters are set for a 24 GB GPU and can be adjusted dynamically according to the available memory)
+  --output_path OUTPUT_PATH
+                        Path of outputs
+```
+We provide an example for testing. After downloading the [Domcke2020_adrenal_mini](https://drive.google.com/drive/folders/1R2vfJNoVwj-v0AXjIxp3R1Ul-aOcORsi?usp=share_link) dataset and placing it in a newly created `./data/` directory, you can run the following command to train and evaluate the HitAnno model. The prediction results will be saved in the `./outputs/` directory:
+```bash
+python run_hitanno.py --train_data ./data/Domcke2020_adrenal_mini_train.h5ad --test_data ./data/Domcke2020_adrenal_mini_test.h5ad --output_path ./outputs/
+```
 
 ## Tutorial
-*under construction*
+After downloading the [Domcke2020_adrenal_mini](https://drive.google.com/drive/folders/1R2vfJNoVwj-v0AXjIxp3R1Ul-aOcORsi?usp=share_link) dataset and placing it in a newly created `./data/` directory, you can refer to the `HitAnno_demo.ipynb` file to know more about how to use the HitAnno interface for model training and prediction.
 
 ## Citation
 *Coming soon*
