@@ -1,6 +1,6 @@
 # HitAnno
 This repository contains the official implementation of the paper: 
-**HitAnno: a hierarchical transformer for cell type annotation on scATAC-seq data.**
+**HitAnno: Atlas-level cell type annotation based on scATAC-seq data via a hierarchical language model.**
 
 Table of Contents:
 - [Overview](#Overview)
@@ -11,7 +11,7 @@ Table of Contents:
 - [License](#License)
 
 ## Overview
-We developed HitAnno, a scalable model built on a hierarchical transformer architecture for accurate cell type annotation on large scATAC-seq datasets. HitAnno constructs “cell sentences” by leveraging accessibility profiles on cell-type-specific peaks, capturing the epigenomic cell heterogeneity. The model adopts a two-level attention mechanism to capture both peak-level and peak-set-level dependencies, enabling hierarchical feature integration for reliable annotation performance.
+We developed HitAnno, a hierarchical language model based on transformer architecture capable of atlas-level cell type annotation on scATAC-seq data. HitAnno represents each cell as a structured “cell sentence”, constructed from accessibility profiles on specific peaks with consideration of both major and rare cell types. Based on cell sentences, HitAnno employs a two-level attention mechanism that integrates accessibility profiles from individual peaks to higher-order peak sets, enabling scalable extraction of cell-type-specific patterns while explicitly capturing peak interactions at hierarchical levels.
 
 <div align="center">
   <img src="figures/model.png" alt="HitAnno model" width="70%">
