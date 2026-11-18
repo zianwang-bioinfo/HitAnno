@@ -58,8 +58,9 @@ def hitanno_train(train_loader, eval_loader, hitanno_model: HitAnno, col_list, d
             total_eval = 0
             for inputs, labels in eval_loader:
                 inputs, labels = inputs.to(device), labels.to(device)
-                outputs, outputs_trans = hitanno_model(inputs)
-                loss = criterion(outputs, labels)
+                with autocast():
+                    outputs, outputs_trans = hitanno_model(inputs)
+                    loss = criterion(outputs, labels)
                 eval_epoch_loss += loss.item()
                 _, predicted = torch.max(outputs.data, 1)
                 total_eval += labels.size(0)
@@ -105,7 +106,8 @@ def hitanno_predict(test_loader,
         trans_output_list = []
         for inputs, labels in test_loader:
             inputs, labels = inputs.to(device), labels.to(device)
-            outputs, outputs_trans = hitanno_model(inputs)
+            with autocast():
+                outputs, outputs_trans = hitanno_model(inputs)
             trans_output_list.extend(outputs_trans.detach().cpu().tolist())
             _, predicted = torch.max(outputs.data, 1)
             if y_label == None:
