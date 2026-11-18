@@ -49,9 +49,13 @@ python -m ipykernel install --user --name=hitanno
 ```
 
 ## Usage
-After setting up the environment and downloading the code, you can run the program with Python to perform prediction. We provide a `run_hitanno_test.py` file, where you can use `-h` to view all parameters and their detailed descriptions.
+```bash
+git clone https://github.com/zianwang-bioinfo/HitAnno.git
+cd HitAnno
 ```
-usage: run_hitanno_test.py [-h] [--train_data TRAIN_DATA] [--test_data TEST_DATA] [--peak_num_ct PEAK_NUM_CT] [--output_path OUTPUT_PATH]
+After setting up the environment and downloading the code, you can use `run_hitanno.py` to train and evaluate HitAnno. Run the following command to view the available parameters and their descriptions:
+```
+usage: run_hitanno.py [-h] [--train_data TRAIN_DATA] [--test_data TEST_DATA] [--peak_num_ct PEAK_NUM_CT] [--output_path OUTPUT_PATH]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -68,12 +72,16 @@ We provide an example for testing. After downloading the [Domcke2020_adrenal_min
 ```bash
 python run_hitanno.py --train_data ./data/Domcke2020_adrenal_mini_train.h5ad --test_data ./data/Domcke2020_adrenal_mini_test.h5ad --output_path ./outputs/
 ```
+In addition to the mini dataset, we provide the complete processed [Domcke2020_adrenal dataset](https://zenodo.org/records/21473644) for further testing and evaluation.
 
 ## Tutorial
 After downloading the [Domcke2020_adrenal_mini](https://drive.google.com/drive/folders/1R2vfJNoVwj-v0AXjIxp3R1Ul-aOcORsi?usp=share_link) dataset and placing it in a newly created `./data/` directory, you can refer to the `HitAnno_demo.ipynb` file to know more about how to use the HitAnno interface for model training and prediction.
 
 ## Citation
-*Coming soon*
+If you use HitAnno in your research, please cite:
+```
+Wang, Z., Chen, X., Cui, X., Gao, Z., Li, Z., Li, K., & Jiang, R. (2026). HitAnno: Atlas-level cell type annotation based on scATAC-seq data via a hierarchical language model. bioRxiv. https://doi.org/10.64898/2026.03.10.710729
+```
 
 ## License
 This project is covered under the MIT license.
