@@ -91,7 +91,7 @@ class HitAnno(nn.Module):
                     "state_dict": self.state_dict(),
                     "batch_size": self.batch_size,
                     "peak_num_list": self.peak_num_list,
-                    "peak_num_all": self.peak_num,
+                    "peak_num_all": self.peak_num_all,
                     "col_list": col_list,
                     "model_parameter": self.parameter_dict,
                     }, 
